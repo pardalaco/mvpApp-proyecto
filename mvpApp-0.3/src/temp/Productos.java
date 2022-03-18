@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package temp;
-
-import Compara.*;
+import Automatizacion.conexion;
+import java.sql.Connection;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,6 +51,11 @@ public class Productos extends javax.swing.JPanel {
         lProducto.setText("Producto");
 
         bCarrito.setText("Carrito");
+        bCarrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCarritoActionPerformed(evt);
+            }
+        });
 
         bHome.setText("<--");
 
@@ -217,6 +223,16 @@ public class Productos extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCarritoActionPerformed
+        conexion conecta = new conexion();
+        
+        Connection con = conecta.getConexion();
+
+        JOptionPane.showMessageDialog(null, "Conexión establecida con éxito");
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bCarritoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

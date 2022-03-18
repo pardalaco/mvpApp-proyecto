@@ -4,9 +4,24 @@
  */
 package temp;
 
-import InicioSesion.*;
+
 import java.awt.BorderLayout;
 import Automatizacion.boton;
+import Automatizacion.conexion;
+import InicioSesion.Bienvenida;
+import Compara.Productos;
+
+import java.beans.Statement;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,15 +29,41 @@ import Automatizacion.boton;
  */
 public class PantallaInicio extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PantallaInicio
-     */
-    public PantallaInicio() {
+    
+    
+    public PantallaInicio() throws SQLException {
         initComponents();
         
-        Bienvenida bBienvenida= new Bienvenida();
+//        Bienvenida bBienvenida= new Bienvenida();
+        Productos bProductos = new Productos();
         
-        boton.pboton(content, bBienvenida);
+        boton.pboton(content, bProductos);
+        
+        //String consulta = "SELECT Nombre FROM supermercados WHERE Codigo = 'mer1'";
+        
+
+
+        //conexion conecta = new conexion();
+        //Connection con = conecta.getConexion();
+        
+                
+        //java.sql.Statement stmt = con.createStatement();    
+        //ResultSet rs = stmt.executeQuery(consulta);
+
+//        String x[] = new String[1];
+//        
+//        while (rs.next()) {            
+//            x[0] = rs.getString(1);
+//
+//        }
+
+        //rs.next();
+//        
+        //lHola.setText(""+rs.getString(1));
+
+//        Productos bProductos= new Productos();
+//        
+//        boton.pboton(content, bProductos);
     }
 
     /**
@@ -35,20 +76,44 @@ public class PantallaInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         content = new javax.swing.JPanel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        lHola = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         content.setPreferredSize(new java.awt.Dimension(280, 470));
 
+        jToggleButton1.setText("jToggleButton1");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        lHola.setText("jLabel1");
+
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGroup(contentLayout.createSequentialGroup()
+                .addGroup(contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(contentLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jToggleButton1))
+                    .addGroup(contentLayout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(lHola)))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addGroup(contentLayout.createSequentialGroup()
+                .addGap(164, 164, 164)
+                .addComponent(jToggleButton1)
+                .addGap(31, 31, 31)
+                .addComponent(lHola)
+                .addContainerGap(230, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -67,6 +132,14 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+//        conexion conecta = new conexion();
+//        
+//        Connection con = conecta.getConexion();
+//
+//        JOptionPane.showMessageDialog(null, "Conexión establecida con éxito");
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -99,12 +172,18 @@ public class PantallaInicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PantallaInicio().setVisible(true);
+                try {
+                    new PantallaInicio().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(PantallaInicio.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel content;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JLabel lHola;
     // End of variables declaration//GEN-END:variables
 }

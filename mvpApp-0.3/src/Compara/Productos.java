@@ -4,6 +4,11 @@
  */
 package Compara;
 
+import Automatizacion.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author daniel
@@ -13,8 +18,27 @@ public class Productos extends javax.swing.JPanel {
     /**
      * Creates new form Productos
      */
-    public Productos() {
+    public Productos() throws SQLException {
         initComponents();
+        
+        String consultar = "SELECT Nombre FROM supermercados WHERE Codigo = 'mer1'";
+
+        
+        lSupermercado.setText(consulta.consultaProducto(consultar));
+
+        
+//        conexion conecta = new conexion();
+//        Connection con = conecta.getConexion();
+//        
+//                
+//        java.sql.Statement stmt = con.createStatement();    
+//        ResultSet rs = stmt.executeQuery(consulta);
+//
+//        
+//        rs.next();
+////        
+//        lSupermercado.setText(""+rs.getString(1));
+        
     }
 
     /**

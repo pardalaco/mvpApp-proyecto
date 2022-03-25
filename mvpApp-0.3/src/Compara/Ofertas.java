@@ -4,17 +4,34 @@
  */
 package Compara;
 
+import Automatizacion.consulta;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author daniel
  */
 public class Ofertas extends javax.swing.JPanel {
-
-    /**
-     * Creates new form Ofertas
-     */
-    public Ofertas() {
+//
+//    private String codigo;
+//    
+//    public Ofertas(String codigo){
+//        this.codigo = codigo;
+//    }
+    
+    public Ofertas() throws SQLException{
         initComponents();
+        
+        
+        String consultar = "SELECT Nombre FROM supermercados WHERE Codigo = 'mer1'";
+
+        
+        
+        lSupermercado.setText(consulta.consultaProducto(consultar));
+        
+        
     }
 
     /**

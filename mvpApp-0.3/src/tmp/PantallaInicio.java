@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package temp;
+package tmp;
 
 
+import InicioSesion.*;
 import java.awt.BorderLayout;
 import Automatizacion.boton;
 import Automatizacion.conexion;
@@ -134,11 +135,11 @@ public class PantallaInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-//        conexion conecta = new conexion();
-//        
-//        Connection con = conecta.getConexion();
-//
-//        JOptionPane.showMessageDialog(null, "Conexión establecida con éxito");
+        //        conexion conecta = new conexion();
+        //
+        //        Connection con = conecta.getConexion();
+        //
+        //        JOptionPane.showMessageDialog(null, "Conexión establecida con éxito");
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     /**
@@ -166,6 +167,8 @@ public class PantallaInicio extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PantallaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

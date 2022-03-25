@@ -111,3 +111,7 @@ INSERT INTO existencias VALUES('10','lidl1','1233', '0.99',false);
 INSERT INTO existencias VALUES('10','lidl2','1116', '0.99',false);
 INSERT INTO existencias VALUES('10','carr1','1433', '0.79',false);
 INSERT INTO existencias VALUES('10','carr2','2412', '0.79',false);
+
+CREATE USER 'consultas'@'%' IDENTIFIED BY '987654321';
+GRANT SELECT ON proyecto. * TO 'consultas'@'%';
+FLUSH PRIVILEGES;

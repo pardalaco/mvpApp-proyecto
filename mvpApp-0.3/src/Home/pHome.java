@@ -4,6 +4,11 @@
  */
 package Home;
 
+import Automatizacion.boton;
+import Compara.Ofertas;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author daniel
@@ -15,6 +20,9 @@ public class pHome extends javax.swing.JPanel {
      */
     public pHome() {
         initComponents();
+        
+        
+        
     }
 
     /**
@@ -35,6 +43,8 @@ public class pHome extends javax.swing.JPanel {
         lProductosEnOferta = new javax.swing.JLabel();
         pOfertas = new javax.swing.JPanel();
         sliderProductos = new javax.swing.JScrollBar();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
         lMapa = new javax.swing.JLabel();
         pMapa = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -73,19 +83,45 @@ public class pHome extends javax.swing.JPanel {
         sliderProductos.setOrientation(javax.swing.JScrollBar.HORIZONTAL);
         sliderProductos.setToolTipText("");
 
+        jToggleButton1.setText("Lidl");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton2.setText("Mercadona");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pOfertasLayout = new javax.swing.GroupLayout(pOfertas);
         pOfertas.setLayout(pOfertasLayout);
         pOfertasLayout.setHorizontalGroup(
             pOfertasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pOfertasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sliderProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pOfertasLayout.createSequentialGroup()
+                .addGroup(pOfertasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pOfertasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(sliderProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pOfertasLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pOfertasLayout.setVerticalGroup(
             pOfertasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pOfertasLayout.createSequentialGroup()
-                .addContainerGap(71, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(pOfertasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                    .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(sliderProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -176,7 +212,7 @@ public class pHome extends javax.swing.JPanel {
                         .addComponent(pCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pIntercambiableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(bBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                            .addComponent(bBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lSupermercado)
@@ -203,7 +239,7 @@ public class pHome extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pIntercambiable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pIntercambiable, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -216,7 +252,7 @@ public class pHome extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -225,6 +261,29 @@ public class pHome extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_BuscarActionPerformed
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+//        Ofertas bOfertas = new Ofertas("lidl1");
+        
+//        boton.pboton(pIntercambiable, bOfertas);
+ 
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        
+        try {
+            Ofertas bOfertas;
+            
+            bOfertas = new Ofertas();
+            boton.pboton(pIntercambiable, bOfertas);
+        } catch (SQLException ex) {
+            Logger.getLogger(pHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+        
+
+
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Buscar;
@@ -232,6 +291,8 @@ public class pHome extends javax.swing.JPanel {
     private javax.swing.JButton buttonPerfil;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JLabel lMapa;
     private javax.swing.JLabel lProductosEnOferta;
     private javax.swing.JLabel lSupermercado;

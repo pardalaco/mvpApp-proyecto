@@ -12,7 +12,8 @@ import java.sql.DriverManager;
  * @author daniel
  */
 public class conexion {
-    public static final String URL = "jdbc:mysql://192.168.68.111:3306/proyecto";
+//    public static final String URL = "jdbc:mysql://192.168.68.111:3306/proyecto";
+    public static final String URL = "jdbc:mysql://192.168.1.46:3306/proyecto";
     
     public static final String USER = "dani";
     public static final String CLAVE = "1234";

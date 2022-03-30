@@ -14,23 +14,30 @@ import java.util.logging.Logger;
  * @author daniel
  */
 public class Ofertas extends javax.swing.JPanel {
-//
-//    private String codigo;
-//    
-//    public Ofertas(String codigo){
-//        this.codigo = codigo;
-//    }
     
-    public Ofertas() throws SQLException{
-        initComponents();
-        
-        
-        String consultar = "SELECT Nombre FROM supermercados WHERE Codigo = 'mer1'";
+    
+    public Ofertas(String codigo){
 
-        
-        
-        lSupermercado.setText(consulta.consultaProducto(consultar));
-        
+        try {
+            initComponents();
+            
+            
+            String consultar = "SELECT Nombre FROM supermercados WHERE Codigo = "+codigo;
+//            consultar = "SELECT Nombre FROM supermercados WHERE Codigo = 'mer1'";
+
+                    System.out.print("X");
+
+            
+            lSupermercado.setText(consulta.consultaProducto(consultar));
+            
+//
+
+//            lSupermercado.setText("Mercadona");
+        } catch (SQLException ex) {
+            lSupermercado.setText("Mercadona");
+
+            Logger.getLogger(Ofertas.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 
@@ -45,14 +52,12 @@ public class Ofertas extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         lCabecera = new javax.swing.JPanel();
-        bHome = new javax.swing.JToggleButton();
         lOfertas = new javax.swing.JLabel();
         pOfertaSuper = new javax.swing.JPanel();
         lOfertaEn = new javax.swing.JLabel();
         lSupermercado = new javax.swing.JLabel();
 
-        bHome.setText("<--");
-
+        lOfertas.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         lOfertas.setText("Ofertas");
 
         javax.swing.GroupLayout lCabeceraLayout = new javax.swing.GroupLayout(lCabecera);
@@ -60,17 +65,13 @@ public class Ofertas extends javax.swing.JPanel {
         lCabeceraLayout.setHorizontalGroup(
             lCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lCabeceraLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(bHome, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(106, 106, 106)
                 .addComponent(lOfertas)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         lCabeceraLayout.setVerticalGroup(
             lCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(lCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(bHome, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                .addComponent(lOfertas))
+            .addComponent(lOfertas)
         );
 
         lOfertaEn.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
@@ -108,7 +109,7 @@ public class Ofertas extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pOfertaSuper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,7 +118,7 @@ public class Ofertas extends javax.swing.JPanel {
                 .addComponent(lCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pOfertaSuper, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -128,13 +129,14 @@ public class Ofertas extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 21, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton bHome;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel lCabecera;
     private javax.swing.JLabel lOfertaEn;

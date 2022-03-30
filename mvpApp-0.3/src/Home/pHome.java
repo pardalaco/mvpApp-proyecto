@@ -4,18 +4,6 @@
  */
 package Home;
 
-import Automatizacion.boton;
-import static Automatizacion.conexion.URL;
-import Compara.Ofertas;
-import java.awt.Desktop;
-import java.io.IOException;
-
-
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-
 /**
  *
  * @author daniel
@@ -27,9 +15,6 @@ public class pHome extends javax.swing.JPanel {
      */
     public pHome() {
         initComponents();
-        
-        
-        
     }
 
     /**
@@ -46,14 +31,15 @@ public class pHome extends javax.swing.JPanel {
         pCabecera = new javax.swing.JPanel();
         buttonPerfil = new javax.swing.JButton();
         nombreApp = new javax.swing.JLabel();
+        slaiderGenera = new javax.swing.JScrollBar();
+        lProductosEnOferta = new javax.swing.JLabel();
         pOfertas = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        sliderProductos = new javax.swing.JScrollBar();
         lMapa = new javax.swing.JLabel();
         pMapa = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         lSupermercado = new javax.swing.JLabel();
+        pProductos = new javax.swing.JPanel();
         Buscar = new javax.swing.JTextField();
         bBuscar = new javax.swing.JButton();
 
@@ -81,81 +67,64 @@ public class pHome extends javax.swing.JPanel {
                     .addComponent(nombreApp)))
         );
 
-        jToggleButton1.setText("Lidl");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
+        lProductosEnOferta.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        lProductosEnOferta.setText("Productos en oferta");
 
-        jToggleButton2.setText("Mercadona");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
-            }
-        });
-
-        jToggleButton3.setText("Carrefur");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
-            }
-        });
+        sliderProductos.setOrientation(javax.swing.JScrollBar.HORIZONTAL);
+        sliderProductos.setToolTipText("");
 
         javax.swing.GroupLayout pOfertasLayout = new javax.swing.GroupLayout(pOfertas);
         pOfertas.setLayout(pOfertasLayout);
         pOfertasLayout.setHorizontalGroup(
             pOfertasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pOfertasLayout.createSequentialGroup()
-                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton1)
-                .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pOfertasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(sliderProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         pOfertasLayout.setVerticalGroup(
             pOfertasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pOfertasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pOfertasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pOfertasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pOfertasLayout.createSequentialGroup()
+                .addContainerGap(71, Short.MAX_VALUE)
+                .addComponent(sliderProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         lMapa.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         lMapa.setText("Mapa");
 
-        pMapa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                pMapaMousePressed(evt);
-            }
-        });
-
-        jLabel4.setText("Mapa");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/si.jpg"))); // NOI18N
 
         javax.swing.GroupLayout pMapaLayout = new javax.swing.GroupLayout(pMapa);
         pMapa.setLayout(pMapaLayout);
         pMapaLayout.setHorizontalGroup(
             pMapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pMapaLayout.createSequentialGroup()
-                .addGap(110, 110, 110)
+                .addContainerGap()
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pMapaLayout.setVerticalGroup(
             pMapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pMapaLayout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(36, 36, 36))
         );
 
         lSupermercado.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         lSupermercado.setText("Supermercados");
+
+        javax.swing.GroupLayout pProductosLayout = new javax.swing.GroupLayout(pProductos);
+        pProductos.setLayout(pProductosLayout);
+        pProductosLayout.setHorizontalGroup(
+            pProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        pProductosLayout.setVerticalGroup(
+            pProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 109, Short.MAX_VALUE)
+        );
 
         Buscar.setToolTipText("");
         Buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +143,11 @@ public class pHome extends javax.swing.JPanel {
                 .addGroup(pIntercambiableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pCabecera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pIntercambiableLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(lProductosEnOferta)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(pProductos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pIntercambiableLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pIntercambiableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pMapa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -184,47 +158,53 @@ public class pHome extends javax.swing.JPanel {
                             .addComponent(lSupermercado)
                             .addComponent(lMapa)
                             .addGroup(pIntercambiableLayout.createSequentialGroup()
-                                .addGap(0, 5, Short.MAX_VALUE)
+                                .addGap(0, 33, Short.MAX_VALUE)
                                 .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(20, 20, 20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(slaiderGenera, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         pIntercambiableLayout.setVerticalGroup(
             pIntercambiableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pIntercambiableLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pIntercambiableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lSupermercado)
-                .addGap(8, 8, 8)
-                .addComponent(pOfertas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lMapa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pMapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170))
+                .addGroup(pIntercambiableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(slaiderGenera, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pIntercambiableLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pIntercambiableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                            .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lSupermercado)
+                        .addGap(8, 8, 8)
+                        .addComponent(pOfertas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lMapa)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pMapa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lProductosEnOferta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(9, 9, 9))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pIntercambiable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pIntercambiable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pIntercambiable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -245,51 +225,6 @@ public class pHome extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_BuscarActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        Ofertas bOfertas = new Ofertas("'lidl1'");
-        
-        boton.pboton(pIntercambiable, bOfertas);
- 
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-
-            Ofertas bOfertas;
-            
-            bOfertas = new Ofertas("'mer1'");
-            boton.pboton(pIntercambiable, bOfertas);
-        
-    
-        
-
-
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
-
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
-    
-            Ofertas bOfertas;
-            
-            bOfertas = new Ofertas("'carr1'");
-            boton.pboton(pIntercambiable, bOfertas);
-        
-    
-        
-
-    // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
-
-    private void pMapaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pMapaMousePressed
-        
-//        java.net.URI uri = new java.net.URI("https://www.google.com/maps/search/supermercados/");
-//        desktop.brouse(uri);
-
-        
-        // TODO add your handling code here:
-        
-        
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pMapaMousePressed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Buscar;
@@ -297,15 +232,16 @@ public class pHome extends javax.swing.JPanel {
     private javax.swing.JButton buttonPerfil;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     private javax.swing.JLabel lMapa;
+    private javax.swing.JLabel lProductosEnOferta;
     private javax.swing.JLabel lSupermercado;
     private javax.swing.JLabel nombreApp;
     private javax.swing.JPanel pCabecera;
     private javax.swing.JPanel pIntercambiable;
     private javax.swing.JPanel pMapa;
     private javax.swing.JPanel pOfertas;
+    private javax.swing.JPanel pProductos;
+    private javax.swing.JScrollBar slaiderGenera;
+    private javax.swing.JScrollBar sliderProductos;
     // End of variables declaration//GEN-END:variables
 }

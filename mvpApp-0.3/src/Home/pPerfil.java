@@ -55,9 +55,9 @@ public class pPerfil extends javax.swing.JPanel {
         pCabeceraLayout.setHorizontalGroup(
             pCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pCabeceraLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lPerfil)
-                .addGap(99, 99, 99))
+                .addGap(124, 124, 124))
         );
         pCabeceraLayout.setVerticalGroup(
             pCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,23 +66,23 @@ public class pPerfil extends javax.swing.JPanel {
                 .addComponent(lPerfil))
         );
 
-        jLabel1.setText("Foto");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/a.png"))); // NOI18N
 
         javax.swing.GroupLayout lFotoLayout = new javax.swing.GroupLayout(lFoto);
         lFoto.setLayout(lFotoLayout);
         lFotoLayout.setHorizontalGroup(
             lFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lFotoLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         lFotoLayout.setVerticalGroup(
             lFotoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lFotoLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lMail.setText("mail");
@@ -100,11 +100,12 @@ public class pPerfil extends javax.swing.JPanel {
                         .addComponent(lFoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(79, 79, 79))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pPerfilLayout.createSequentialGroup()
-                        .addComponent(lNombre)
-                        .addGap(98, 98, 98))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pPerfilLayout.createSequentialGroup()
-                        .addComponent(lMail)
-                        .addGap(107, 107, 107))))
+                        .addGroup(pPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pPerfilLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(lMail))
+                            .addComponent(lNombre))
+                        .addGap(130, 130, 130))))
         );
         pPerfilLayout.setVerticalGroup(
             pPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +119,7 @@ public class pPerfil extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jLabel4.setText("IMG");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/e.jpg"))); // NOI18N
 
         jLabel5.setText("Editar perfil");
 
@@ -127,23 +128,23 @@ public class pPerfil extends javax.swing.JPanel {
         pEditarPerfilLayout.setHorizontalGroup(
             pEditarPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pEditarPerfilLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(78, 78, 78)
                 .addComponent(jLabel4)
-                .addGap(63, 63, 63)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel5)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pEditarPerfilLayout.setVerticalGroup(
             pEditarPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pEditarPerfilLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pEditarPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pEditarPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jLabel6.setText("IMG");
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/siu.jpg"))); // NOI18N
 
         jLabel7.setText("Ubicación");
 
@@ -152,23 +153,23 @@ public class pPerfil extends javax.swing.JPanel {
         pUbicacionLayout.setHorizontalGroup(
             pUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pUbicacionLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(58, 58, 58)
                 .addComponent(jLabel6)
-                .addGap(64, 64, 64)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         pUbicacionLayout.setVerticalGroup(
             pUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pUbicacionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pUbicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
                     .addComponent(jLabel7))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        jLabel8.setText("IMG");
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/candado.png"))); // NOI18N
 
         jLabel9.setText("Privacidad");
 
@@ -177,23 +178,23 @@ public class pPerfil extends javax.swing.JPanel {
         pPrivacidadLayout.setHorizontalGroup(
             pPrivacidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pPrivacidadLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(59, 59, 59)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel9)
-                .addGap(51, 51, 51))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pPrivacidadLayout.setVerticalGroup(
             pPrivacidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pPrivacidadLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pPrivacidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pPrivacidadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
                     .addComponent(jLabel9))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jLabel10.setText("IMG");
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logout.jpg"))); // NOI18N
 
         jLabel11.setText("Desconectar cuenta");
 
@@ -202,20 +203,19 @@ public class pPerfil extends javax.swing.JPanel {
         pDesconectarCuentaLayout.setHorizontalGroup(
             pDesconectarCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pDesconectarCuentaLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(56, 56, 56)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel11)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pDesconectarCuentaLayout.setVerticalGroup(
             pDesconectarCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pDesconectarCuentaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pDesconectarCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
+                .addComponent(jLabel11)
                 .addContainerGap(15, Short.MAX_VALUE))
+            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -230,11 +230,10 @@ public class pPerfil extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(pEditarPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(pPrivacidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pDesconectarCuenta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(pPrivacidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pDesconectarCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pUbicacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 16, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -252,7 +251,7 @@ public class pPerfil extends javax.swing.JPanel {
                 .addComponent(pPrivacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pDesconectarCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

@@ -43,6 +43,8 @@ public class IniciarSesion extends javax.swing.JPanel {
         tMail = new javax.swing.JTextField();
         tPass = new javax.swing.JPasswordField();
         jButton3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(280, 470));
 
@@ -90,14 +92,19 @@ public class IniciarSesion extends javax.swing.JPanel {
             }
         });
 
-        lPass.setText("Imagen");
+        lPass.setText("Correo");
 
-        jLabel4.setText("Imagen");
+        jLabel4.setText("Contraseña");
 
-        tMail.setText("Email addres");
+        tMail.setText("Email adress");
         tMail.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tMailMousePressed(evt);
+            }
+        });
+        tMail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tMailActionPerformed(evt);
             }
         });
 
@@ -123,14 +130,14 @@ public class IniciarSesion extends javax.swing.JPanel {
                     .addGroup(pInicioSesionLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(tPass, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                        .addComponent(tPass, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lPass))
-                .addContainerGap())
+                .addContainerGap(73, Short.MAX_VALUE))
             .addGroup(pInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pInicioSesionLayout.createSequentialGroup()
-                    .addContainerGap(83, Short.MAX_VALUE)
-                    .addComponent(tMail, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+                    .addContainerGap(97, Short.MAX_VALUE)
+                    .addComponent(tMail, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(73, 73, 73)))
         );
         pInicioSesionLayout.setVerticalGroup(
             pInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,41 +169,59 @@ public class IniciarSesion extends javax.swing.JPanel {
             }
         });
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/face.png"))); // NOI18N
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/twitter.png"))); // NOI18N
+
         javax.swing.GroupLayout PanelInicoSesionLayout = new javax.swing.GroupLayout(PanelInicoSesion);
         PanelInicoSesion.setLayout(PanelInicoSesionLayout);
         PanelInicoSesionLayout.setHorizontalGroup(
             PanelInicoSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInicoSesionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bRegistrarse)
+                .addGap(24, 24, 24))
+            .addGroup(PanelInicoSesionLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addContainerGap(158, Short.MAX_VALUE))
+            .addGroup(PanelInicoSesionLayout.createSequentialGroup()
+                .addComponent(pInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(PanelInicoSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelInicoSesionLayout.createSequentialGroup()
                     .addGap(18, 18, 18)
                     .addGroup(PanelInicoSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(pLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(PanelInicoSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelInicoSesionLayout.createSequentialGroup()
-                                .addComponent(bBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bRegistrarse))
-                            .addComponent(pInicioSesion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInicoSesionLayout.createSequentialGroup()
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(20, 20, 20)))
-                    .addContainerGap(18, Short.MAX_VALUE)))
+                            .addContainerGap(38, Short.MAX_VALUE))
+                        .addGroup(PanelInicoSesionLayout.createSequentialGroup()
+                            .addGroup(PanelInicoSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(pLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addContainerGap(116, Short.MAX_VALUE)))))
         );
         PanelInicoSesionLayout.setVerticalGroup(
             PanelInicoSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInicoSesionLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(bRegistrarse)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
+                .addComponent(pInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelInicoSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(56, 56, 56))
             .addGroup(PanelInicoSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelInicoSesionLayout.createSequentialGroup()
                     .addGap(61, 61, 61)
-                    .addGroup(PanelInicoSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(bBienvenida)
-                        .addComponent(bRegistrarse))
+                    .addComponent(bBienvenida)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(pLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(pInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGap(182, 182, 182)
                     .addComponent(jButton3)
                     .addContainerGap(62, Short.MAX_VALUE)))
         );
@@ -279,6 +304,10 @@ public class IniciarSesion extends javax.swing.JPanel {
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton3MouseClicked
 
+    private void tMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tMailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tMailActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelInicoSesion;
@@ -287,7 +316,9 @@ public class IniciarSesion extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lPass;
     private javax.swing.JPanel pInicioSesion;
     private javax.swing.JPanel pLogo;

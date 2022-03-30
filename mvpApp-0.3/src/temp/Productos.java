@@ -2,12 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Compara;
-
-import Automatizacion.*;
+package temp;
+import Automatizacion.conexion;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,27 +16,8 @@ public class Productos extends javax.swing.JPanel {
     /**
      * Creates new form Productos
      */
-    public Productos() throws SQLException {
+    public Productos() {
         initComponents();
-        
-        String consultar = "SELECT Nombre FROM supermercados WHERE Codigo = 'mer1'";
-
-        
-        lSupermercado.setText(consulta.consultaProducto(consultar));
-
-        
-//        conexion conecta = new conexion();
-//        Connection con = conecta.getConexion();
-//        
-//                
-//        java.sql.Statement stmt = con.createStatement();    
-//        ResultSet rs = stmt.executeQuery(consulta);
-//
-//        
-//        rs.next();
-////        
-//        lSupermercado.setText(""+rs.getString(1));
-        
     }
 
     /**
@@ -53,8 +32,8 @@ public class Productos extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         pCabecera = new javax.swing.JPanel();
         lProducto = new javax.swing.JLabel();
-        bCarrito = new javax.swing.JToggleButton();
         bHome = new javax.swing.JToggleButton();
+        bCarrito = new javax.swing.JToggleButton();
         lFotoProducto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         lDescripcionProducto = new javax.swing.JPanel();
@@ -71,9 +50,14 @@ public class Productos extends javax.swing.JPanel {
 
         lProducto.setText("Producto");
 
-        bCarrito.setText("Carrito");
-
         bHome.setText("<--");
+
+        bCarrito.setText("Carrito");
+        bCarrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCarritoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pCabeceraLayout = new javax.swing.GroupLayout(pCabecera);
         pCabecera.setLayout(pCabeceraLayout);
@@ -83,16 +67,16 @@ public class Productos extends javax.swing.JPanel {
                 .addComponent(bHome, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(lProducto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(bCarrito, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(25, 25, 25))
         );
         pCabeceraLayout.setVerticalGroup(
             pCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pCabeceraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(lProducto)
-                .addComponent(bCarrito, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                .addComponent(bHome, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
+                .addComponent(bHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bCarrito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/descarga (1).jpg"))); // NOI18N
@@ -101,11 +85,17 @@ public class Productos extends javax.swing.JPanel {
         lFotoProducto.setLayout(lFotoProductoLayout);
         lFotoProductoLayout.setHorizontalGroup(
             lFotoProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(lFotoProductoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         lFotoProductoLayout.setVerticalGroup(
             lFotoProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+            .addGroup(lFotoProductoLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         lSupermercado.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -128,15 +118,12 @@ public class Productos extends javax.swing.JPanel {
                 .addGroup(lDescripcionProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(lDescripcionProductoLayout.createSequentialGroup()
                         .addComponent(lSupermercado)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(56, 56, 56)
                         .addComponent(lPrecio))
-                    .addGroup(lDescripcionProductoLayout.createSequentialGroup()
-                        .addGroup(lDescripcionProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lLocalidad)
-                            .addComponent(lTipoProducto)
-                            .addComponent(lUnidades))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(lLocalidad)
+                    .addComponent(lTipoProducto)
+                    .addComponent(lUnidades))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         lDescripcionProductoLayout.setVerticalGroup(
             lDescripcionProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,7 +138,7 @@ public class Productos extends javax.swing.JPanel {
                 .addComponent(lTipoProducto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lUnidades)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         bMasProducto.setText("+");
@@ -169,12 +156,12 @@ public class Productos extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pBajoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addGap(46, 46, 46))
         );
         pBajoLayout.setVerticalGroup(
             pBajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pBajoLayout.createSequentialGroup()
-                .addComponent(jToggleButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                .addComponent(jToggleButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -225,14 +212,24 @@ public class Productos extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCarritoActionPerformed
+        conexion conecta = new conexion();
+        
+        Connection con = conecta.getConexion();
+
+        JOptionPane.showMessageDialog(null, "Conexión establecida con éxito");
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bCarritoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

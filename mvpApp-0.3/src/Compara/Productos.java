@@ -95,23 +95,23 @@ public class Productos extends javax.swing.JPanel {
                 .addComponent(bHome, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
         );
 
-        jLabel2.setText("Foto producto");
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/descarga (1).jpg"))); // NOI18N
 
         javax.swing.GroupLayout lFotoProductoLayout = new javax.swing.GroupLayout(lFotoProducto);
         lFotoProducto.setLayout(lFotoProductoLayout);
         lFotoProductoLayout.setHorizontalGroup(
             lFotoProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lFotoProductoLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         lFotoProductoLayout.setVerticalGroup(
             lFotoProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lFotoProductoLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel2)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         lSupermercado.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N

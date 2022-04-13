@@ -112,7 +112,7 @@ public class pHome extends javax.swing.JPanel {
                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton1)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pOfertasLayout.setVerticalGroup(
             pOfertasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,23 +135,23 @@ public class pHome extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setText("Mapa");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/si.jpg"))); // NOI18N
 
         javax.swing.GroupLayout pMapaLayout = new javax.swing.GroupLayout(pMapa);
         pMapa.setLayout(pMapaLayout);
         pMapaLayout.setHorizontalGroup(
             pMapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pMapaLayout.createSequentialGroup()
-                .addGap(110, 110, 110)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pMapaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(57, 57, 57))
         );
         pMapaLayout.setVerticalGroup(
             pMapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pMapaLayout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
+            .addGroup(pMapaLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addComponent(jLabel4)
-                .addGap(36, 36, 36))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         lSupermercado.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
@@ -184,7 +184,7 @@ public class pHome extends javax.swing.JPanel {
                             .addComponent(lSupermercado)
                             .addComponent(lMapa)
                             .addGroup(pIntercambiableLayout.createSequentialGroup()
-                                .addGap(0, 5, Short.MAX_VALUE)
+                                .addGap(0, 8, Short.MAX_VALUE)
                                 .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))

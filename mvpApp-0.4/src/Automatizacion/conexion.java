@@ -13,10 +13,10 @@ import java.sql.DriverManager;
  */
 public class conexion {
 //    public static final String URL = "jdbc:mysql://192.168.68.111:3306/proyecto";
-    public static final String URL = "jdbc:mysql://192.168.1.46:3306/proyecto";
+    public static final String URL = "";
     
-    public static final String USER = "dani";
-    public static final String CLAVE = "1234";
+    public static final String USER = "";
+    public static final String CLAVE = "";
     
     public Connection getConexion(){
         Connection con = null;
